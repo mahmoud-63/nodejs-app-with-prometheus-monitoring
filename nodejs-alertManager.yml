@@ -1,0 +1,22 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: nodejs-app-alert-manager
+  namespace: monitoring
+spec:
+  route:
+    receiver: 'nodejs-app-slack'
+    repeatInterval: 30m
+    routes:
+    - matchers:
+      - name: alertname
+        value: HighRequestRateNodejs
+      repeatInterval: 10m
+  receivers:
+  - name: 'nodejs-app-slack'
+    slackConfigs:
+      - apiURL:
+          key: webhook
+          name: nodejs-app-slack-secret
+        channel: '#high_request_nodejs_app'
+        sendResolved: true

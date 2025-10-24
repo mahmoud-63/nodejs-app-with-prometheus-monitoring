@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: nodejs-alert-rules
+  namespace: monitoring
+  labels:
+    release: prometheus
+    app: kube-prometheus-stack
+spec:
+  groups:
+  - name: nodejs.rules
+    rules:
+    - alert: HighRequestRateNodejs
+      expr: rate(http_requests_root_total[5m]) > 10
+      for: 0m
+      labels:
+        app: nodejs
+        namespace: monitoring
+      annotations:
+        summary: "High request rate detected in Nodejs application"
+        description: "The request rate to the root path has exceeded 10 requests."
