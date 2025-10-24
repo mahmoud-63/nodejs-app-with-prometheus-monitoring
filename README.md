@@ -12,17 +12,17 @@ The setup includes:
 
 ---
 
-##  Project Structure
-
+## 🧱 Project Structure
 .
-├── Dockerfile
-├── index.js
-├── nodejs-alertManager.yml
-├── nodejs-alertRule.yml
-├── nodejs-app-slack-secret.yml
-├── nodejs-app.yml
-├── nodejs-svc-monitor.yml
+├── Dockerfile  
+├── index.js  
+├── nodejs-alertManager.yml  
+├── nodejs-alertRule.yml  
+├── nodejs-app-slack-secret.yml  
+├── nodejs-app.yml  
+├── nodejs-svc-monitor.yml  
 └── nodejs-svc.yml
+
 
 ---
 
