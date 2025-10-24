@@ -47,7 +47,12 @@ The setup includes:
 
     Deploy the app and monitoring stack:
 
-kubectl apply -f deployment.yaml
+kubectl apply -f nodejs-app.yml 
+kubectl apply -f nodejs-svc.yml
+kubectl apply -f nodejs-svc-monitor.yml
+kubectl apply -f nodejs-alertRule.yml
+kubectl apply -f nodejs-app-slack-secret.yml
+kubectl apply -f nodejs-alertManager.yml
 
 Verify components:
 
